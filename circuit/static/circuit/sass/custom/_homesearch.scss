@@ -1,0 +1,40 @@
+.video-image{
+	    max-height: 420px;
+    overflow: hidden;
+	img{
+		width: 100%;
+   
+	}
+}
+.crct-search{
+	top: 0px;
+    height: 100%;
+    color: #fff;
+    background: rgba(0,0,0, 0.5);
+    h1{
+    	font-size: 36px;
+    	font-weight: 400;
+    }
+    p{
+    	font-size: 22px;
+    	margin-bottom: 10px;
+    }
+    form{
+    	    input{
+    	height: 49px;
+    	border-radius:5px;
+    
+    }
+    		&:after{
+				content: "";
+			    background: url(../images/search.svg) no-repeat center center;
+			    width: 50px;
+			    height: 35px;
+			    position: absolute;
+			    top: 7px;
+			    right: 0px;
+			    border-left: 1px solid $border;
+    	}
+    }
+
+}

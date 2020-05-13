@@ -1,0 +1,200 @@
+{% extends 'events/base.html' %}
+
+ <!-- inner banner -->
+ {% block content %}
+ {% load static %}
+
+  <!---Banner Video-->
+       <div class="container-fluid p-0">
+            <div class="position-relative">
+                <div class="video-image">
+                    <img src="{% static 'images-new/images.png' %}" alt="banner">
+                </div>
+                <div class="position-absolute crct-search w-100 d-flex justify-content-center align-items-center text-center">
+                    <div class="container">
+                        <h1 class="mb-0">Circuit App</h1>
+                        <p>We can place a text here to brief user what we are offering</p>
+                        <form class="position-relative">
+                            <input class="form-control" type="search" placeholder="Basic search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!---Middle content-->
+   <div class="container-fluid">
+            <div class="container"> -->
+                <!---Popular Categories-->
+                <div class="row popular-cat position-relative">
+                    <div class="col">
+                        <h2 class="text-center">Popular Categories</h2>
+                        <div class="customer-logos slider">
+                            <div class="slide col-md-3">
+                                <div class="categories d-flex justify-content-center align-self-center">
+                                    <a href="javascript:void(0)" class="active cat-link d-flex justify-content-center align-items-center flex-column">
+                                        <div class="cat-icon d-flex justify-content-center align-items-center">
+                                            <img src="{% static 'images-new/Participate icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="cat-name mt-2 d-flex justify-content-center align-items-center flex-column">Participate</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide col-md-3">
+                                <div class="categories d-flex justify-content-center align-self-center">
+                                    <a href="javascript:void(0)" class="cat-link d-flex justify-content-center align-items-center flex-column">
+                                        <div class="cat-icon d-flex justify-content-center align-items-center">
+                                            <img src="{% static 'images-new/Participate icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="cat-name mt-2 d-flex justify-content-center align-items-center flex-column">Participate</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide col-md-3">
+                                <div class="categories d-flex justify-content-center align-self-center">
+                                    <a href="javascript:void(0)" class="cat-link d-flex justify-content-center align-items-center flex-column">
+                                        <div class="cat-icon d-flex justify-content-center align-items-center">
+                                            <img src="{% static 'images-new/Live Events icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="cat-name mt-2 d-flex justify-content-center align-items-center flex-column">Live Events</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide col-md-3">
+                                <div class="categories d-flex justify-content-center align-self-center">
+                                    <a href="javascript:void(0)" class="cat-link d-flex justify-content-center align-items-center flex-column">
+                                        <div class="cat-icon d-flex justify-content-center align-items-center">
+                                            <img src="{% static 'images-new/Family & Kids Programs icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="cat-name mt-2 d-flex justify-content-center align-items-center flex-column">Family & Kids Programs</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide col-md-3">
+                                <div class="categories d-flex justify-content-center align-self-center">
+                                    <a href="javascript:void(0)" class="cat-link d-flex justify-content-center align-items-center flex-column">
+                                        <div class="cat-icon d-flex justify-content-center align-items-center">
+                                            <img src="{% static 'images-new/Here and Now icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="cat-name mt-2 d-flex justify-content-center align-items-center flex-column">Here and Now</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide col-md-3">
+                                <div class="categories d-flex justify-content-center align-self-center">
+                                    <a href="javascript:void(0)" class="cat-link d-flex justify-content-center align-items-center flex-column">
+                                        <div class="cat-icon d-flex justify-content-center align-items-center">
+                                            <img src="{% static 'images-new/Participate icon.svg' %}" alt="">
+                                        </div>
+                                        <div class="cat-name mt-2 d-flex justify-content-center align-items-center flex-column">Participate</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             <!---Global activites-->
+ <div class="row">
+                    <div class="col">
+                        <h2 class="text-center global-heading circuitmb-20">Global/Online Activities</h2>
+                    </div>
+                </div>
+                <div class="row global-activites">
+                    <div class="col-sm-3 left-card">
+                        <div class="row h-100">
+                            <div class="col-12 h-100">
+                                <div class="card position-relative h-100">
+                                    <img src="{% static 'images-new/Science-in-the-City.png' %}" class="card-img-top" alt="circuit">
+                                    <div class="card-body p-0 w-100">
+                                        <div class="event-heart position-absolute d-flex justify-content-center align-items-center">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="event-name text-center position-absolute"></div>
+                                        <div class="text position-absolute">Events</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 pl-0 pr-0 pr-lg-3 global-products">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card position-relative">
+                                    <img src="{% static 'images-new/global.png' %}" class="card-img-top" alt="circuit">
+                                    <div class="card-body p-0 w-100">
+                                        <div class="event-heart position-absolute d-flex justify-content-center align-items-center">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="event-name text-center position-absolute"></div>
+                                        <div class="text position-absolute">Events</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card position-relative">
+                                    <img src="{% static 'images-new/global.png' %}" class="card-img-top" alt="circuit">
+                                    <div class="card-body p-0 w-100">
+                                        <div class="event-heart position-absolute d-flex justify-content-center align-items-center">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="event-name text-center position-absolute"></div>
+                                        <div class="text position-absolute">Events</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card position-relative">
+                                    <img src="{% static 'images-new/global.png' %}" class="card-img-top" alt="circuit">
+                                    <div class="card-body p-0 w-100">
+                                        <div class="event-heart position-absolute d-flex justify-content-center align-items-center">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="event-name text-center position-absolute"></div>
+                                        <div class="text position-absolute">Events</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card position-relative">
+                                    <img src="{% static 'images-new/global.png' %}" class="card-img-top" alt="circuit">
+                                    <div class="card-body p-0 w-100">
+                                        <div class="event-heart position-absolute d-flex justify-content-center align-items-center">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="event-name text-center position-absolute"></div>
+                                        <div class="text position-absolute">Events</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card position-relative">
+                                    <img src="{% static 'images-new/global.png' %}" class="card-img-top" alt="circuit">
+                                    <div class="card-body p-0 w-100">
+                                        <div class="event-heart position-absolute d-flex justify-content-center align-items-center">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="event-name text-center position-absolute"></div>
+                                        <div class="text position-absolute">Events</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="view-more-activities d-flex justify-content-center align-items-center"><a jref="#" class="position-relative">View More</a></div>
+                                <div class="card position-relative">
+                                    <img src="{% static 'images-new/global.png' %}" class="card-img-top" alt="circuit">
+                                    <div class="card-body p-0 w-100">
+                                        <div class="event-heart position-absolute d-flex justify-content-center align-items-center">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="event-name text-center position-absolute"></div>
+                                        <div class="text position-absolute">Events</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---Middle content-->
+
+{% endblock %}

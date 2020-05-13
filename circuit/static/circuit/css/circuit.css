@@ -1,0 +1,749 @@
+/**************Custom colors**************/
+/**************font family**************/
+/**************font Size**************/
+/**************shadow**************/
+/**************Mixin**************/
+/* line 4, ../sass/custom/_global.scss */
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Segoe UI";
+  color: #404040;
+}
+
+/* line 12, ../sass/custom/_global.scss */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 18, ../sass/custom/_global.scss */
+h2 {
+  font-size: 22px;
+  color: #404040;
+  margin-bottom: 30px;
+}
+/* line 22, ../sass/custom/_global.scss */
+h2:after {
+  border-bottom: 3px solid #81D62B;
+  content: "";
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+}
+
+/* line 30, ../sass/custom/_global.scss */
+a {
+  font-family: "Segoe UI";
+  outline: none;
+}
+/* line 33, ../sass/custom/_global.scss */
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 38, ../sass/custom/_global.scss */
+button {
+  outline: none !important;
+}
+
+/* line 43, ../sass/custom/_global.scss */
+.display-none-m {
+  display: block;
+}
+
+/* line 46, ../sass/custom/_global.scss */
+.display-none-d {
+  display: none;
+}
+
+/* line 49, ../sass/custom/_global.scss */
+.page-wrapper {
+  padding-bottom: 0px;
+}
+
+/* line 52, ../sass/custom/_global.scss */
+.circuitmb-20 {
+  margin-bottom: 20px;
+}
+
+/* line 55, ../sass/custom/_global.scss */
+.d-blockI {
+  display: block !important;
+}
+
+/* line 58, ../sass/custom/_global.scss */
+.btn-primary {
+  background: #263463;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+/* line 63, ../sass/custom/_global.scss */
+.btn-primary:hover {
+  background: #263463;
+}
+/* line 66, ../sass/custom/_global.scss */
+.btn-primary:focus {
+  box-shadow: none;
+  border: 0px;
+}
+/* line 69, ../sass/custom/_global.scss */
+.btn-primary:active {
+  background: #263463 !important;
+  border: 0px !important;
+  box-shadow: none !important;
+}
+
+/* line 73, ../sass/custom/_global.scss */
+input::-webkit-input-placeholder {
+  color: #A4A4A4;
+}
+
+/* line 77, ../sass/custom/_global.scss */
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #A4A4A4;
+}
+
+/* line 81, ../sass/custom/_global.scss */
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #A4A4A4;
+}
+
+/* line 85, ../sass/custom/_global.scss */
+input:-ms-input-placeholder {
+  color: #A4A4A4;
+}
+
+/* line 1, ../sass/custom/_header.scss */
+header {
+  background: #E6F1FF;
+  padding: 16px 0px;
+}
+/* line 7, ../sass/custom/_header.scss */
+header nav .navbar-nav li {
+  margin-right: 30px;
+  padding: 3px 0px;
+}
+/* line 11, ../sass/custom/_header.scss */
+header nav .navbar-nav li:last-child {
+  margin-right: 0px;
+}
+/* line 16, ../sass/custom/_header.scss */
+header nav .navbar-nav li:hover:after {
+  content: "";
+  display: block;
+  width: 61%;
+  border-bottom: 3px solid #81D62B;
+}
+/* line 26, ../sass/custom/_header.scss */
+header nav .navbar-nav .active:after {
+  content: "";
+  display: block;
+  width: 61%;
+  border-bottom: 3px solid #81D62B;
+}
+/* line 34, ../sass/custom/_header.scss */
+header nav .navbar-nav a {
+  padding: 0px;
+  font-size: 16px;
+  color: #404040;
+  font-family: "Segoe UI";
+  text-decoration: none;
+}
+/* line 45, ../sass/custom/_header.scss */
+header .notification img {
+  width: 22px;
+}
+/* line 49, ../sass/custom/_header.scss */
+header .notification .notification-count {
+  background: #FF6565;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  top: -5px;
+  right: -8px;
+  font-size: 12px;
+}
+/* line 60, ../sass/custom/_header.scss */
+header .user-profile {
+  margin-left: 3rem;
+}
+/* line 64, ../sass/custom/_header.scss */
+header .user-profile .user-avatar img {
+  width: 30px;
+  height: 30px;
+}
+/* line 72, ../sass/custom/_header.scss */
+header .dropdown-toggle:after {
+  content: "";
+  border: 0px;
+  background: url(../images/down-arrrow.svg) no-repeat;
+  width: 20px;
+  height: 10px;
+  position: relative;
+  top: 6px;
+}
+/* line 83, ../sass/custom/_header.scss */
+header .dropdown-menu {
+  padding: 0px 10px;
+  margin-left: -138px;
+}
+/* line 87, ../sass/custom/_header.scss */
+header .dropdown-menu .dropdown-item {
+  border-bottom: 1px solid #EEEEEE;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #263463;
+}
+/* line 93, ../sass/custom/_header.scss */
+header .dropdown-menu .dropdown-item img {
+  width: 15px;
+  margin-right: 15px;
+}
+/* line 98, ../sass/custom/_header.scss */
+header .dropdown-menu .dropdown-item:hover {
+  background: none;
+}
+/* line 104, ../sass/custom/_header.scss */
+header .guest-login {
+  display: none !important;
+}
+
+/* line 110, ../sass/custom/_header.scss */
+#guestLogin .g-none {
+  display: none !important;
+}
+/* line 115, ../sass/custom/_header.scss */
+#guestLogin .guest-login span {
+  color: #404040;
+  font-weight: 600;
+  margin-right: 25px;
+}
+/* line 121, ../sass/custom/_header.scss */
+#guestLogin .guest-login button {
+  min-width: 119px;
+}
+/* line 126, ../sass/custom/_header.scss */
+#guestLogin .guest-login {
+  display: flex !important;
+}
+
+/* line 3, ../sass/custom/_global-activites.scss */
+.global-activites .card {
+  border: 0px;
+}
+/* line 7, ../sass/custom/_global-activites.scss */
+.global-activites .event-name {
+  background: transparent linear-gradient(0deg, #000000 0%, #0000A6 56%, #000000 100%) 0% 0% no-repeat padding-box;
+  border-radius: 0px 0px 10px 10px;
+  opacity: 0.2;
+  color: #fff;
+  font-size: 12px;
+  padding: 20px 0px;
+  bottom: 0;
+  width: 100%;
+}
+/* line 18, ../sass/custom/_global-activites.scss */
+.global-activites .text {
+  color: #fff;
+  bottom: 0;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 8px 0px;
+}
+/* line 27, ../sass/custom/_global-activites.scss */
+.global-activites .event-heart {
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 5px;
+}
+/* line 36, ../sass/custom/_global-activites.scss */
+.global-activites .left-card {
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+/* line 41, ../sass/custom/_global-activites.scss */
+.global-activites .left-card img {
+  border-radius: 5px;
+}
+/* line 48, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .view-more-activities {
+  display: none;
+}
+/* line 53, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .col-sm-4 img {
+  border-radius: 5px;
+}
+/* line 57, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .col-sm-4:last-child {
+  border-radius: 5px;
+}
+/* line 61, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .col-sm-4:last-child .view-more-activities {
+  display: block;
+  background: #E6E6E6;
+  height: 100%;
+  border-radius: 5px;
+  color: #263463;
+  font-size: 21px;
+}
+/* line 70, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .col-sm-4:last-child .view-more-activities a:after {
+  border-bottom: 1px solid #263463;
+  padding-bottom: 36px;
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 5px;
+  left: 0;
+}
+/* line 80, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .col-sm-4:last-child .view-more-activities a:before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  -moz-border-radius: 7.5px;
+  -webkit-border-radius: 7.5px;
+  border-radius: 7.5px;
+  background-color: #263463;
+  right: -4px;
+  position: absolute;
+  top: 32px;
+  background-color: #263463;
+}
+/* line 97, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .col-sm-4:last-child .card-img-top,
+.global-activites .global-products .col-sm-4:last-child .event-heart,
+.global-activites .global-products .col-sm-4:last-child .text,
+.global-activites .global-products .col-sm-4:last-child .event-name,
+.global-activites .global-products .col-sm-4:last-child .fa-heart {
+  display: none !important;
+}
+/* line 105, ../sass/custom/_global-activites.scss */
+.global-activites .global-products .col-sm-4:last-child .card {
+  background: #E6E6E6;
+}
+/* line 112, ../sass/custom/_global-activites.scss */
+.global-activites .col-sm-4 {
+  padding-bottom: 30px;
+}
+
+/* line 116, ../sass/custom/_global-activites.scss */
+.global-heading {
+  margin-top: 60px;
+}
+
+/* line 1, ../sass/custom/_homesearch.scss */
+.video-image {
+  max-height: 420px;
+  overflow: hidden;
+}
+/* line 4, ../sass/custom/_homesearch.scss */
+.video-image img {
+  width: 100%;
+}
+
+/* line 9, ../sass/custom/_homesearch.scss */
+.crct-search {
+  top: 0px;
+  height: 100%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 14, ../sass/custom/_homesearch.scss */
+.crct-search h1 {
+  font-size: 36px;
+  font-weight: 400;
+}
+/* line 18, ../sass/custom/_homesearch.scss */
+.crct-search p {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+/* line 23, ../sass/custom/_homesearch.scss */
+.crct-search form input {
+  height: 49px;
+  border-radius: 5px;
+}
+/* line 28, ../sass/custom/_homesearch.scss */
+.crct-search form:after {
+  content: "";
+  background: url(../images/search.svg) no-repeat center center;
+  width: 50px;
+  height: 35px;
+  position: absolute;
+  top: 7px;
+  right: 0px;
+  border-left: 1px solid #EEEEEE;
+}
+
+/* line 1, ../sass/custom/_footer.scss */
+footer {
+  background: #E6F1FF;
+  padding: 30px 0px 45px 0px;
+}
+/* line 4, ../sass/custom/_footer.scss */
+footer .footer-links {
+  background: #E6F1FF;
+}
+/* line 7, ../sass/custom/_footer.scss */
+footer p {
+  font-size: 20px;
+  line-height: 27px;
+  padding-top: 20px;
+  width: 62%;
+}
+/* line 13, ../sass/custom/_footer.scss */
+footer h2 {
+  margin-bottom: 10px;
+}
+/* line 15, ../sass/custom/_footer.scss */
+footer h2:after {
+  display: none;
+}
+/* line 21, ../sass/custom/_footer.scss */
+footer ul li a {
+  color: #404040;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 27px;
+}
+/* line 26, ../sass/custom/_footer.scss */
+footer ul li a:hover {
+  text-decoration: none;
+  color: #263463;
+}
+/* line 33, ../sass/custom/_footer.scss */
+footer .social-icons {
+  margin-top: 40px;
+}
+/* line 36, ../sass/custom/_footer.scss */
+footer .social-icons li {
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+/* line 44, ../sass/custom/_footer.scss */
+.crct-copyright {
+  background: #BBDAFE;
+  color: #404040;
+  font-size: 12px;
+  padding: 12px 0px;
+}
+
+/* line 1, ../sass/custom/_popular-cat.scss */
+.popular-cat {
+  background: #fff;
+  box-shadow: 0px 3px 12px #d6d6d6;
+  padding: 0px 70px 40px 70px;
+  margin: -30px  0px 0px 0px;
+}
+/* line 7, ../sass/custom/_popular-cat.scss */
+.popular-cat .cat-icon {
+  width: 125px;
+  height: 125px;
+  border-radius: 100%;
+  background: #E6E6E6;
+}
+/* line 13, ../sass/custom/_popular-cat.scss */
+.popular-cat h2 {
+  margin-top: 15px;
+}
+/* line 16, ../sass/custom/_popular-cat.scss */
+.popular-cat a {
+  color: #00456A;
+  font-size: 17px;
+}
+/* line 22, ../sass/custom/_popular-cat.scss */
+.popular-cat .active .cat-icon {
+  box-shadow: 0px 3px 6px #d6d6d6;
+}
+/* line 27, ../sass/custom/_popular-cat.scss */
+.popular-cat .active .cat-name:after {
+  border-bottom: 3px solid #81D62B;
+  content: "";
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+}
+
+/* line 1, ../sass/custom/_mobile-menu.scss */
+.mobile-menu {
+  background: #fff;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px 3px 12px #d6d6d6;
+}
+/* line 12, ../sass/custom/_mobile-menu.scss */
+.mobile-menu ul li a {
+  color: #818181;
+  font-size: 12px;
+  display: inline-flex;
+}
+/* line 18, ../sass/custom/_mobile-menu.scss */
+.mobile-menu ul li .show-active {
+  display: none;
+}
+/* line 22, ../sass/custom/_mobile-menu.scss */
+.mobile-menu ul li .active {
+  color: #263463;
+}
+/* line 23, ../sass/custom/_mobile-menu.scss */
+.mobile-menu ul li .active .show-active {
+  display: block;
+}
+/* line 27, ../sass/custom/_mobile-menu.scss */
+.mobile-menu ul li .active .hide-active {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /**************Global secton**********/
+  /* line 5, ../sass/custom/_reponsive.scss */
+  .display-none-m {
+    display: none;
+  }
+
+  /* line 9, ../sass/custom/_reponsive.scss */
+  .display-none-d {
+    display: block;
+  }
+
+  /* line 13, ../sass/custom/_reponsive.scss */
+  .page-wrapper {
+    padding-bottom: 71px;
+  }
+
+  /**************Header**********/
+  /* line 19, ../sass/custom/_reponsive.scss */
+  #guestLogin .notification {
+    display: none;
+  }
+  /* line 24, ../sass/custom/_reponsive.scss */
+  #guestLogin .guest-login span {
+    margin-right: 10px;
+  }
+  /* line 28, ../sass/custom/_reponsive.scss */
+  #guestLogin .guest-login button {
+    min-width: 100px;
+  }
+
+  /**************Home page Banner**********/
+  /* line 36, ../sass/custom/_reponsive.scss */
+  .crct-search h1 {
+    font-size: 20px;
+  }
+  /* line 40, ../sass/custom/_reponsive.scss */
+  .crct-search p {
+    font-size: 12px;
+  }
+  /* line 45, ../sass/custom/_reponsive.scss */
+  .crct-search form:after {
+    height: 27px;
+  }
+  /* line 49, ../sass/custom/_reponsive.scss */
+  .crct-search form input {
+    height: 39px;
+    border-radius: 20px;
+  }
+
+  /**************Global Activities**********/
+  /* line 58, ../sass/custom/_reponsive.scss */
+  .global-activites .left-card {
+    padding-right: 0;
+    padding-bottom: 10px;
+    padding-left: 0;
+  }
+  /* line 63, ../sass/custom/_reponsive.scss */
+  .global-activites .left-card img {
+    max-height: 246px;
+  }
+  /* line 71, ../sass/custom/_reponsive.scss */
+  .global-activites .global-products .col-sm-4 {
+    padding-bottom: 10px;
+  }
+  /* line 74, ../sass/custom/_reponsive.scss */
+  .global-activites .global-products .col-sm-4:last-child {
+    height: 150px;
+  }
+  /* line 77, ../sass/custom/_reponsive.scss */
+  .global-activites .global-products .col-sm-4:last-child .view-more-activities {
+    font-size: 14px;
+  }
+  /* line 81, ../sass/custom/_reponsive.scss */
+  .global-activites .global-products .col-sm-4:last-child .view-more-activities a:after {
+    padding-bottom: 25px;
+    width: 53px;
+  }
+  /* line 86, ../sass/custom/_reponsive.scss */
+  .global-activites .global-products .col-sm-4:last-child .view-more-activities a:before {
+    width: 5px;
+    height: 5px;
+    right: 5px;
+    top: 23px;
+  }
+
+  /**************Footer**********/
+  /* line 100, ../sass/custom/_reponsive.scss */
+  footer {
+    text-align: center;
+  }
+  /* line 103, ../sass/custom/_reponsive.scss */
+  footer p {
+    width: 100%;
+  }
+  /* line 107, ../sass/custom/_reponsive.scss */
+  footer h2 {
+    margin-top: 40px;
+  }
+  /* line 113, ../sass/custom/_reponsive.scss */
+  footer ul li a {
+    line-height: 50px;
+  }
+
+  /* line 120, ../sass/custom/_reponsive.scss */
+  .social-icons {
+    margin-top: 35px;
+  }
+  /* line 124, ../sass/custom/_reponsive.scss */
+  .social-icons li:last-child {
+    margin-right: 0px;
+  }
+
+  /**************Popular CAT**********/
+  /* line 131, ../sass/custom/_reponsive.scss */
+  .popular-cat {
+    padding: 20px 0px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  /* line 137, ../sass/custom/_reponsive.scss */
+  .popular-cat .cat-icon {
+    width: 60px;
+    height: 60px;
+  }
+  /* line 141, ../sass/custom/_reponsive.scss */
+  .popular-cat .cat-icon img {
+    width: 35px;
+  }
+  /* line 146, ../sass/custom/_reponsive.scss */
+  .popular-cat a {
+    font-size: 12px;
+  }
+
+  /* line 153, ../sass/custom/_reponsive.scss */
+  button.slick-arrow {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /**************Header Nav**********/
+  /* line 169, ../sass/custom/_reponsive.scss */
+  header nav .navbar-nav li {
+    margin-right: 10px;
+  }
+  /* line 175, ../sass/custom/_reponsive.scss */
+  header .user-profile {
+    margin-left: -15px;
+  }
+  /* line 180, ../sass/custom/_reponsive.scss */
+  header .col-md-2 img {
+    width: 120px;
+  }
+  /* line 186, ../sass/custom/_reponsive.scss */
+  header .notification .notification-count {
+    right: 31px;
+  }
+
+  /* line 197, ../sass/custom/_reponsive.scss */
+  #guestLogin .guest-login span {
+    margin-right: 5px;
+    font-size: 14px;
+  }
+  /* line 202, ../sass/custom/_reponsive.scss */
+  #guestLogin .guest-login button {
+    min-width: 53px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  /* show 3 items */
+  /* line 221, ../sass/custom/_reponsive.scss */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item {
+    display: block;
+  }
+
+  /* line 227, ../sass/custom/_reponsive.scss */
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  /* line 233, ../sass/custom/_reponsive.scss */
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 239, ../sass/custom/_reponsive.scss */
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  /* line 249, ../sass/custom/_reponsive.scss */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  /* line 259, ../sass/custom/_reponsive.scss */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  /* line 269, ../sass/custom/_reponsive.scss */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,34 @@
+.mobile-menu {
+    background: #fff;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: $light-shadow;
+
+    ul {
+        li {
+
+            a {
+                color: $mobilenav;
+                font-size: $smalltext;
+                display: inline-flex;
+            }
+
+            .show-active {
+                display: none;
+            }
+
+            .active {
+                .show-active {
+                    display: block;
+                }
+
+                .hide-active {
+                    display: none;
+                }
+                color:$buttonbg;
+            }
+        }
+    }
+}

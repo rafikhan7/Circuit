@@ -1,0 +1,130 @@
+header {
+    background: $primarybg;
+    padding: 16px 0px;
+
+    nav {
+        .navbar-nav {
+            li {
+                margin-right: 30px;
+                padding: 3px 0px;
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+
+                &:hover {
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 61%;
+                        border-bottom: 3px solid $activeunderline;
+                    }
+                }
+            }
+
+            .active {
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 61%;
+                    border-bottom: 3px solid $activeunderline;
+                }
+            }
+
+            a {
+                padding: 0px;
+                font-size: $bodycopy;
+                color: $primarytext;
+                font-family: $fontfamily;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .notification {
+        img {
+            width: 22px;
+        }
+
+        .notification-count {
+            background: $redbg;
+            color: $white;
+            width: 20px;
+            height: 20px;
+            top: -5px;
+            right: -8px;
+            font-size: $smalltext;
+        }
+    }
+
+    .user-profile {
+        margin-left: 3rem;
+
+        .user-avatar {
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .dropdown-toggle {
+        &:after {
+            content: "";
+            border: 0px;
+            background: url(../images/down-arrrow.svg) no-repeat;
+            width: 20px;
+            height: 10px;
+            position: relative;
+            top: 6px;
+        }
+    }
+
+    .dropdown-menu {
+        padding: 0px 10px;
+        margin-left: -138px;
+
+        .dropdown-item {
+            border-bottom: 1px solid $border;
+            padding: 8px 10px;
+            font-size: $smalltext;
+            color: $buttonbg;
+
+            img {
+                width: 15px;
+                margin-right: 15px
+            }
+
+            &:hover {
+                background: none;
+            }
+        }
+    }
+
+    .guest-login {
+        display: none !important;
+    }
+}
+
+#guestLogin {
+    .g-none {
+        display: none !important;
+    }
+
+    .guest-login {
+        span {
+            color: $primarytext;
+            font-weight: 600;
+            margin-right: 25px;
+        }
+
+        button {
+            min-width: 119px;
+        }
+    }
+
+    .guest-login {
+        display: flex !important;
+    }
+
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Circuit</title>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css-new/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css-new/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css-new/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css-new/slick.css' %}">
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/4c1ccf3dfe.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css-new/circuit.css' %}">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAbJEjFBLObWFbUMSwZFcH8xkTJgZ5ZHww",
+    authDomain: "circute-b601d.firebaseapp.com",
+    databaseURL: "https://circute-b601d.firebaseio.com",
+    projectId: "circute-b601d",
+    storageBucket: "circute-b601d.appspot.com",
+    messagingSenderId: "404403249494",
+    appId: "1:404403249494:web:687d4e5d5dd65ce5f736f7",
+    measurementId: "G-6QVPQY4XXM"
+};
+if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+const messaging = firebase.messaging();
+navigator.serviceWorker.register('{% static "js/firebase-messaging-sw.js" %}')
+        .then((registration) => {
+            var messaging = firebase.messaging();
+            messaging.useServiceWorker(registration);
+        });
+
+
+function initFirebaseMessagingRegistration(){
+    messaging.requestPermission()
+        .then(function() {
+            console.log('Notification permission granted.');
+            messaging.getToken()
+                .then(function(currentToken) {
+                    if (currentToken) {
+                        console.log(currentToken, 'token');
+                        var formData = {
+                            "registration_id": currentToken,
+                        }
+                        $.ajax({
+                                type: 'POST',
+                                url: '/save_clientDevice/',
+                                data: formData,
+                                encode: true
+                            })
+                            .done(function(data) {
+                                console.log(data)
+                                updates = JSON.parse(data);
+
+                            });
+                        event.preventDefault();
+                    } else {
+                        console.log('No Instance ID token available. Request permission to generate one.');
+                    }
+                })
+                .catch(function(err) {
+                    console.log('An error occurred while retrieving token. ', err);
+                });
+        })
+        .catch(function(err) {
+            console.log('Unable to get permission to notify. ', err);
+
+        });
+
+}
+    messaging.onMessage(function(payload) {
+        console.log(payload, 'test');
+        notification(payload.data, 4000);
+        update_notification();
+    });
+ messaging.onTokenRefresh(function() {
+        messaging.getToken()
+            .then(function(refreshedToken) {
+                console.log('Token refreshed.');
+                tokenElement.innerHTML = "Token is " + refreshedToken;
+            }).catch(function(err) {
+                errorElement.innerHTML = "Error: " + err;
+                console.log('Unable to retrieve refreshed token ', err);
+            });
+    });
+</script>
+      </head>
+  <body>
+  
+
+   <div class="page-wrapper"> 
+        <!---Header Navigation bar-->
+ <header class="container-fluid" > id="guestLogin"
+            <div class="container">
+                <div class="row"> 
+                    <!---Logo-->
+                <div class="col-6 pl-0 pl-lg-3 col-sm-6 col-md-2 col-lg-2">
+                        <img src="{% static 'images-new/circuit.png' %}" alt="">
+                    </div> 
+                    <!---Navigation-->
+                 <div class="col col-sm-6 col-md-7 col-lg-6 display-none-m">
+                        <nav class="navbar navbar-expand navbar-light p-0">
+                            <div>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a href="/">Home Page<span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#">Advance Search</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#">Bookmarks</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <!---Notification-->
+              <div class="col-2 col-sm-2 col-md-1 col-lg-1 notification position-relative text-lg-right text-md-left text-right pl-md-0 pr-sm-0 pr-0">
+                        <img src="{% static 'images-new/notification.svg' %}" alt="ntification" class="g-none">
+                        <div class="notification-count position-absolute g-none rounded-circle d-flex justify-content-center align-items-center"id="current_notification">{{request.notifications}}</div>
+                    </div>
+                    <!---Before Login-->
+              <div class="col-6 col-sm-6 guest-login col-md-2 pl-md-0 pr-0 col-lg-3 pl-2 pl-lg-0 d-flex justify-content-end">
+                        <div class="">
+                            <span class="d-inline-flex">Hi Guest! </span><button type="button" class="btn btn-primary border-0">Login</button>
+                        </div>
+                    </div>
+                    <!---User Profile after login-->
+             <div class="col col-sm-3 col-md-2 pl-md-0 col-lg-3 pl-2 pl-lg-0 display-none-m g-none">
+                        <div class="dropdown user-profile d-flex align-items-center justify-content-end">
+                            <div class="user-avatar pr-2">
+                                <img src="{% static 'images-new/global.png' %}" alt="avatar" class="rounded-circle">
+                            </div>
+                            <div class="user-name pr-1 text-truncate">
+                               {{request.user.username}}
+                            </div>
+                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#"><img src="{% static 'images-new/myprofile.svg' %}" alt="">My Profile</a>
+                                <a class="dropdown-item" href="#"><img src="{% static 'images-new/heart.svg' %}" alt="">Favourites</a>
+                                <a class="dropdown-item" href="#"><img src="{% static 'images-new/resetpassword.svg' %}" alt="">Reset Password</a>
+                                <a class="dropdown-item" href="#"><img src="{% static 'images-new/logout.svg' %}" alt="">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+  <div id="notification-box">
+  </div>
+{% block content %}
+{% endblock %}
+        <footer class="container-fluid footer-links mt-5">
+       <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-6">
+                        <img src="images/circuit.png" alt="">
+                        <p>
+                            Development of this site was supported under
+                            grant DRL-1516703 awarded to
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-3">
+                        <h2>ABOUT</h2>
+                        <ul>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Terms of Use</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-3">
+                        <h2>CONTACT US</h2>
+                        <ul>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">Contact: info@Circuit.org</a></li>
+                        </ul>
+                        <ul class="social-icons">
+                            <li><a href=""><img src="{% static 'images-new/fb.svg' %}" alt="facebook"></a></li>
+                            <li><a href=""><img src="{% static 'images-new/twitter.svg' %}" alt="twitter"></a></li>
+                            <li><a href=""><img src="{% static 'images-new/insta.svg' %}" alt="instagram"></a></li>
+                            <li><a href=""><img src="{% static 'images-new/linkedin.svg' %}" alt="linkedIn"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="text-center crct-copyright">© 2020 Circuit</div>
+        <div class="container-fluid mobile-menu display-none-d">
+            <div class="container">
+                <div class="row">
+                    <ul class="w-100 d-inline-flex justify-content-between">
+                        <li class="d-inline-flex">
+                            <a href="javascript:void(0)" class="d-inline-flex justify-content-center align-items-center flex-column">
+                                <img src="images/Home icon.svg" alt="home" class="hide-active">
+                                <img src="images/Home icon.svg" alt="home" class="show-active">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="d-inline-flex justify-content-center align-items-center flex-column">
+                                <img src="images/Search icon.svg" alt="home">
+                                Advance Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="d-inline-flex justify-content-center aalign-items-center flex-column">
+                                <img src="images/Bookmark icon.svg" alt="home">
+                                Bookmarks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="d-inline-flex justify-content-center align-items-center flex-column">
+                                <img src="images/Contact us icon.svg" alt="home">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <!--  <script src="{% static 'js-new/jquery-3.4.1.slim.min.js' %}"></script> -->
+   <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js-new/popper.min.js' %}"></script>
+    <script src="{% static 'js-new/bootstrap.min.js' %}js/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="{% static 'js-new/custom.js' %}"></script>
+    <div id="token" style="color:lightblue"></div>
+    <div id="message" style="color:lightblue"></div>
+    <div id="notification" style="color:green"></div>
+    <div id="error" style="color:red"></div>
+    <script>
+        messageElement = document.getElementById("message")
+        tokenElement = document.getElementById("token")
+        notificationElement = document.getElementById("notification")
+        errorElement = document.getElementById("error")
+    </script>
+    <button style="color:green" onclick="initFirebaseMessagingRegistration()">Enable FCM</button>
+    </footer>
+  </div>
+   
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/infinite.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/rangeslider.min.js' %}"></script>
+<script src="{% static 'js/rangeslider.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script>
+  /* ajax call for user activity tracking*/
+$( "#mylink" ).click(function() {
+    var formData = {
+        'event_name': $('input[name=event_name]').val(),
+        'event_type': $('input[name=event_type]').val(),
+        'event-url': $('input[name=event_url]').val()
+    };
+    $.ajax({
+            type: 'POST',
+            url: '/user_activity/',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            updates = JSON.parse(data);
+            
+        });
+    event.preventDefault();
+});
+
+/* ajax call for FCM*/
+$( "#fcm" ).click(function() {
+  alert('test fcm');
+  var formData = {
+    "device_id" : "bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1",
+}
+    $.ajax({
+            type: 'POST',
+            url: '/save_clientDevice/',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            updates = JSON.parse(data);
+            
+        });
+    event.preventDefault();
+});
+/* ajax call for FCM*/
+$( "#bookmark" ).click(function() {
+    var formData = {
+        'event_name': $('input[name=event_name]').val(),
+        'event_id': $('input[name=event_id]').val(),
+    };
+    $.ajax({
+            type: 'POST',
+            url: '/event_bookmark/',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            updates = JSON.parse(data);
+            
+        });
+    event.preventDefault();
+});
+</script>
+<script src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript">
+$('body').on("click", "#enableSuspension", function() {
+  notification('Client suspension enabled.', 2000)
+})
+
+function notification(s, time) {
+
+  $("<p>" + s.title + s.body + "</p>").appendTo('#notification-box').fadeTo(time, 1, function () {
+    $(this).fadeTo(1000, 0, function () {
+      $(this).remove()
+    });
+  });
+
+}
+function update_notification(){
+ var unread_notification =  $('#current_notification').text();
+  update_notifi = parseInt(unread_notification)+1
+    $("#current_notification").html(update_notifi);
+ }
+
+</script>
+
+<script type="text/javascript">
+$( "#notification" ).click(function() {
+    var current_page = $('#current_page').val();
+    $.ajax({
+            type: 'GET',
+            url: '/notification_paginate/?'+ $.param({ page: current_page }),
+            encode: true
+        })
+        .done(function(data) {
+            update_page = parseInt(current_page)+1
+            $("#current_page").val(update_page);
+            data = JSON.parse(data);
+            data.forEach(function(item){
+              $("#notification_list ul").append("<li><a href='#'>"+item.fields.title+"</a></li>");
+
+              console.log(current_page);
+            })            
+        }).fail(function() {
+            $("#notification_fail").append("Data is not available");
+             $("#notification").hide();
+        });
+    event.preventDefault();
+});
+
+</script>
+
+  </body>
+</html>

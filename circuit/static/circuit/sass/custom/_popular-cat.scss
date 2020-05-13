@@ -1,0 +1,37 @@
+.popular-cat {
+    background: $white;
+    box-shadow: $light-shadow;
+    padding: 0px 70px 40px 70px;
+    margin: -30px  0px 0px 0px;
+
+    .cat-icon {
+        width: 125px;
+        height: 125px;
+        border-radius: 100%;
+        background: $lightgraybg;
+    }
+    h2{
+    	margin-top: 15px;
+    }
+    a {
+        color: #00456A;
+        font-size: 17px;
+    }
+
+    .active {
+        .cat-icon {
+            box-shadow: $small-shadow;
+        }
+
+        .cat-name {
+            &:after {
+                border-bottom: 3px solid #81D62B;
+                content: "";
+                display: block;
+                width: 50px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+}

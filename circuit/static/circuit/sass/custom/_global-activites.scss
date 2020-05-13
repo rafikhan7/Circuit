@@ -1,0 +1,118 @@
+.global-activites {
+
+    .card {
+        border: 0px;
+    }
+
+    .event-name {
+        background: transparent linear-gradient(0deg, #000000 0%, #0000A6 56%, #000000 100%) 0% 0% no-repeat padding-box;
+        border-radius: 0px 0px 10px 10px;
+        opacity: 0.2;
+        color: #fff;
+        font-size: 12px;
+        padding: 20px 0px;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .text {
+        color: $white;
+        bottom: 0;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        padding: 8px 0px;
+    }
+
+    .event-heart {
+        top: 5px;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        border-radius: 5px;
+    }
+
+    .left-card {
+        padding-right: 30px;
+        padding-bottom: 30px;
+
+
+        img {
+            //height: 362px;
+            border-radius: 5px;
+        }
+    }
+
+    .global-products {
+        .view-more-activities {
+            display: none;
+        }
+
+        .col-sm-4 {
+            img {
+                border-radius: 5px;
+            }
+
+            &:last-child {
+
+                border-radius: 5px;
+
+                .view-more-activities {
+                    display: block;
+                    background: $lightgraybg;
+                    height: 100%;
+                    border-radius: 5px;
+                    color: $buttonbg;
+                    font-size: 21px;
+
+                    a {
+                        &:after {
+                            border-bottom: 1px solid $buttonbg;
+                            padding-bottom: 36px;
+                            content: "";
+                            position: absolute;
+                            width: 90px;
+                            height: 5px;
+                            left: 0;
+                        }
+
+                        &:before {
+                            content: '';
+                            display: inline-block;
+                            width: 8px;
+                            height: 8px;
+                            -moz-border-radius: 7.5px;
+                            -webkit-border-radius: 7.5px;
+                            border-radius: 7.5px;
+                            background-color: #263463;
+                            right: -4px;
+                            position: absolute;
+                            top: 32px;
+                            background-color: $buttonbg;
+                        }
+                    }
+                }
+
+                .card-img-top,
+                .event-heart,
+                .text,
+                .event-name,
+                .fa-heart {
+                    display: none !important;
+                }
+
+                .card {
+                    background: $lightgraybg;
+                }
+            }
+        }
+    }
+
+    .col-sm-4{
+        padding-bottom:30px;
+    }
+}
+    .global-heading{
+        margin-top: 60px;
+    }
